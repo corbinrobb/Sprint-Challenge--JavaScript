@@ -73,7 +73,7 @@ const graduates = [
 
 Once you have the new array created, log the result. */
 const universities = graduates.map(student => student.university);
-console.table(universities);
+console.log(universities);
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. This will be an array of strings.
 
@@ -82,14 +82,14 @@ The resulting contact information strings should have a space between the first 
 
 Log the result of your new array. */
 const contactInfo = graduates.map(student => `${student.first_name} ${student.email}`);
-console.table(contactInfo);
+console.log(contactInfo);
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called unisWithUni that contains them all. This will be an array of objects. Log the result. */
 const unisWithUni = graduates.reduce((total, student) => {
   if(student.university.includes('Uni')) total.push(student.university);
   return total;
 }, []);
-console.table(unisWithUni);
+console.log(unisWithUni);
 
 
 // ==== ADVANCED Array Methods ====
@@ -116,7 +116,7 @@ The zoos want to display both the scientific name and the animal name in front o
 */
 const displayNames = [];
 zooAnimals.forEach(animal => displayNames.push(`Name: ${animal.animal_name}, Scientific: ${animal.scientific_name}.`));
-console.table(displayNames);
+console.log(displayNames);
 
 /* Request 2: .map()
 
@@ -125,7 +125,7 @@ The zoos need a list of all their animal's names (animal_name only) converted to
 */
 
 const lowCaseAnimalNames = zooAnimals.map(animal => animal.animal_name.toLowerCase());
-console.table(lowCaseAnimalNames);
+console.log(lowCaseAnimalNames);
 
 /* Request 3: .filter() 
 
@@ -133,7 +133,7 @@ The zoos are concerned about animals with a lower population count. Using filter
 
 */
 const lowPopulationAnimals = zooAnimals.filter(animal => animal.population < 5);
-console.table(lowPopulationAnimals);
+console.log(lowPopulationAnimals);
 
 /* Request 4: .reduce() 
 
@@ -144,7 +144,7 @@ const populationTotal = zooAnimals.reduce((total, animal) => {
   total += animal.population;
   return total;
 }, 0);
-console.table(populationTotal);
+console.log(populationTotal);
 
 
 /*
